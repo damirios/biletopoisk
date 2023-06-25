@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "../Container/Container";
 
 import styles from "./styles.module.css";
@@ -10,7 +11,7 @@ export function Header({}: Props) {
     return <header className={styles.header}>
         <Container>
             <div className={styles.header__row}>
-                <a className={styles.header__logo} href="#">Билетопоиск</a>
+                <Link className={styles.header__logo} href="/">Билетопоиск</Link>
                 <a href="#" className={styles.header__cart}>
                     <div className={styles.cart__count}>5</div>
                     <div className={styles.cart__icon}>

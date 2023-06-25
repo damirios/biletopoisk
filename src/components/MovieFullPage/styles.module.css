@@ -1,0 +1,126 @@
+/* MOVIE */
+.movie_block {
+    display: flex;
+    column-gap: 32px;
+    background-color: #fff;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+.movie__image_box {
+    flex: 0 0 400px;
+}
+.movie__image_box img {
+    border-radius: 8px;
+}
+
+.movie__info {
+    position: relative;
+}
+
+.movie__counter {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+.movie__counter button {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+}
+
+.movie__title {
+    font-size: 32px;
+    line-height: 100%;
+    font-weight: 700;
+    color: #1B1F23;
+    margin-bottom: 24px;
+}
+
+.movie__paragraph {
+    font-size: 20px;
+    line-height: calc(24 / 20 * 100%);
+    color: #1B1F23;
+    margin-bottom: 16px;
+}
+.movie__paragraph span {
+    font-weight: 700;
+}
+
+.movie__description {
+    font-size: 16px;
+    line-height: calc(24 / 16 * 100%);
+    color: #1B1F23;
+    margin-top: 16px;
+    text-align: justify;
+}
+.movie__description p {
+    font-size: 20px;
+    line-height: calc(32 / 20 * 100%);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+
+/* REVIEW ================================================ */
+.reviews {}
+
+.reviews__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.review {
+    padding: 24px;
+    display: flex;
+    column-gap: 32px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.review__avatar_box {
+    flex: 0 0 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E0E0E0;
+    border-radius: 8px;
+}
+
+.review__info_box {
+    flex: 1 1 auto;
+}
+
+.reviewer__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: calc(32 / 20 * 100%);
+    color: #1B1F23;
+}
+
+.reviewer__name {
+    font-weight: 700;
+}
+
+.reviewer__rating span {
+    font-weight: 700;
+}
+
+.review__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #1B1F23;
+}
