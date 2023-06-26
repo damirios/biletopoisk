@@ -21,7 +21,6 @@ function FiltersUI({filters}: FiltersUIProps) {
             <div className={styles.form__group}>
                 <label className={styles.form__label}>Название</label>
                 <Input type="title" className={styles.form__input} placeholder='Введите название' />
-                {/* <input type="text" name="title" placeholder='Введите название' className={styles.form__input} /> */}
             </div>
             <div className={styles.form__group}>
                 <label className={styles.form__label}>Жанр</label>
@@ -31,10 +30,6 @@ function FiltersUI({filters}: FiltersUIProps) {
                 <label className={styles.form__label}>Кинотеатр</label>
                 <SelectServer type="cinema" placeholder="Выберите кинотеатр" />
             </div>
-            {/* <div className={styles.form__group}>
-                <label htmlFor="form_genre" className={styles.form__label}>Кинотеатр</label>
-                <Select placeholder="Выберите кинотеатр" />
-            </div> */}
         </form>
     </div>
 }

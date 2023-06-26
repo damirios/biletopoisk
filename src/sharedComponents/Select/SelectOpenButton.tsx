@@ -1,4 +1,6 @@
 import { MouseEvent } from "react";
+import Image from 'next/image';
+
 import styles from "./styles.module.css";
 
 interface Props {
@@ -11,6 +13,6 @@ interface Props {
 export function SelectOpenButton({placeholder, isOpen, openMenu, value}: Props) {
     return <div className={`${styles.select_button} ${isOpen ? styles.active : ''}`} onClick={openMenu}>
         {value || <span>{placeholder}</span>}
-        <img className={isOpen ? styles.rotate : ""} src="/assets/svg/select_arrow.svg" alt="arrow" />
+        <Image className={isOpen ? styles.rotate : ""} src="/assets/svg/select_arrow.svg" alt="arrow" width={20} height={20} />
     </div>
 }

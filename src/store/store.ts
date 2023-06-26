@@ -1,6 +1,5 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { cartReducer } from "./slices/cartSilce";
-import { logger } from "./middlewares/logger";
 import { movieApi } from "./services/movieApi";
 
 

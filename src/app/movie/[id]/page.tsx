@@ -1,8 +1,6 @@
 'use client';
 
 import { Content } from "@/components/Content";
-import { Footer } from "@/components/Footer/Footer";
-import { Header } from "@/components/Header/Header";
 import MovieFullPage from "@/components/MovieFullPage/MovieFullPage";
 import { useGetMovieByIdQuery } from "@/store/services/movieApi";
 

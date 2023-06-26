@@ -1,7 +1,7 @@
 import { useParamsObj } from "@/hooks/useParamsObj";
 import { FiltersParamsTypes } from "@/types/FiltersTypes";
 import { getQueryString } from "@/utils/getQueryString";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Portal } from "../Portal/Portal";
 import { DropdownMenu } from "./DropdownMenu";
@@ -55,11 +55,9 @@ export function Select({placeholder, list, type}: SelectPropsType) {
     }, [isOpen]);
 
     return <div ref={rootRef}>
-        {/* <GenreContext.Provider value={true}> */}
-            <SelectOpenButton placeholder={placeholder} value={value !== null ? list[value] : null} isOpen={isOpen} openMenu={openMenu} />
-            {isOpen && <Portal type="dropdowns">
-                <DropdownMenu onChange={handleSelectionChange} list={list} parent={rootRef.current} />    
-            </Portal>}
-        {/* </GenreContext.Provider> */}
+        <SelectOpenButton placeholder={placeholder} value={value !== null ? list[value] : null} isOpen={isOpen} openMenu={openMenu} />
+        {isOpen && <Portal type="dropdowns">
+            <DropdownMenu onChange={handleSelectionChange} list={list} parent={rootRef.current} />    
+        </Portal>}
     </div>
 }

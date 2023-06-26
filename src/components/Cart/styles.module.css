@@ -6,6 +6,7 @@
 }
 
 .cart__summary {
+    margin-top: 24px;
     padding: 24px;
     border-radius: 8px;
     background-color: #fff;
