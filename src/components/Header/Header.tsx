@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Container } from "../Container/Container";
 
+import { Container } from "../Container/Container";
 import styles from "./styles.module.css";
+import { CartLink } from "./CartLink";
 
 interface Props {
 
@@ -9,15 +10,10 @@ interface Props {
 
 export function Header({}: Props) {
     return <header className={styles.header}>
-        <Container>
+        <Container className={styles.header__container}>
             <div className={styles.header__row}>
                 <Link className={styles.header__logo} href="/">Билетопоиск</Link>
-                <a href="#" className={styles.header__cart}>
-                    <div className={styles.cart__count}>5</div>
-                    <div className={styles.cart__icon}>
-                        <img src="/assets/svg/cart.svg" alt="cart-icon" />
-                    </div>
-                </a>
+                <CartLink />
             </div>
         </Container>
     </header>

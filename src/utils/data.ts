@@ -11,5 +11,6 @@ export const genres: GenresType = {
 
 export const filtersTitlesObj = {
     title: 'Название',
-    genre: "Жанр"
+    genre: "Жанр",
+    cinema: "Кинотеатр"
 };

@@ -1,6 +1,8 @@
 'use client';
 
 import { Content } from "@/components/Content";
+import { Footer } from "@/components/Footer/Footer";
+import { Header } from "@/components/Header/Header";
 import MovieFullPage from "@/components/MovieFullPage/MovieFullPage";
 import { useGetMovieByIdQuery } from "@/store/services/movieApi";
 
@@ -12,11 +14,11 @@ export default function Movie({params}: MovieProps) {
     const {data, isLoading, error} = useGetMovieByIdQuery(params.id);
 
     if (isLoading) {
-        return <Content>...Loading</Content>
+        return <Content><div className="loading">...Загружаем страницу фильма</div></Content>
     }
 
     if (!data || error) {
-        return <div>Not Found</div>;
+        return <div className="error">Произошла ошибка!</div>;
     }
     
     return <Content>

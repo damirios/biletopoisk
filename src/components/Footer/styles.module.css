@@ -3,6 +3,10 @@
     color: #fff;
 }
 
+.footer__container {
+    height: 100%;
+}
+
 .footer__row {
     height: 100%;
     display: flex;

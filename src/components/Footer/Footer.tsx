@@ -9,7 +9,7 @@ interface Props {
 
 export function Footer({}: Props) {
     return <footer className={styles.footer}>
-        <Container>
+        <Container className={styles.footer__container}>
             <div className={styles.footer__row}>
                 <a className={styles.footer__link} href="#">Вопросы-ответы</a>
                 <Link className={styles.footer__link} href="/about">О нас</Link>

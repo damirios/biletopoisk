@@ -33,27 +33,28 @@ function getFilteredMovies(allMovies: MovieType[] | undefined, params: FiltersPa
 }
 
 export default function Home() {
-    const {data, isLoading, error} = useGetAllMoviesQuery();
 	const params = useParamsObj();
-	const moviesToShow = getFilteredMovies(data, params);
+	const cinemaId = params.cinema === null ? '' : params.cinema;
+    const moviesResponse = useGetAllMoviesQuery(cinemaId);
+	const moviesToShow = getFilteredMovies(moviesResponse.data, params);
 
-	if (isLoading) {
+	if (moviesResponse.isLoading) {
 		return <Content>
-			...Loading!
+			<div className='loading'>...Загружаем страницу</div>
 		</Content>
 	}
 
-	if (!data || error) {
+	if (!moviesResponse.data || moviesResponse.error) {
 		return <Content>
-			Not Found
+			<div className='error'>Не найдена</div>
 		</Content>
 	}
-	const allGenres = getAllGenresFromMovies(data);
+	const allGenres = getAllGenresFromMovies(moviesResponse.data);
 
 	return <Content>
 		<FiltersContext.Provider value={{genres: {none: "Не выбран", ...allGenres}}}>
 			<Filters />
-			<MovieList movies={moviesToShow || []} isLoading={isLoading} error={error} />
+			<MovieList movies={moviesToShow} isLoading={moviesResponse.isLoading} error={moviesResponse.error} />
 		</FiltersContext.Provider>
 	</Content>
 }

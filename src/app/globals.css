@@ -83,6 +83,7 @@ footer {
 	display: flex;
 	column-gap: 24px;
 	padding: 24px 0;
+	min-height: 100%;
 }
 
 .content__filters {
@@ -100,4 +101,28 @@ footer {
 	width: 100%;
 	top: 0px;
 	left: 0;
+}
+
+/* MODALS ======================================================================== */
+.modals {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* OTHER */
+.loading {
+	font-size: 30px;
+	font-weight: 700;
+}
+.loading_small {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.error {
+	font-size: 30px;
+	color: red;
 }

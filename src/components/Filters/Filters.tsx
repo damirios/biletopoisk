@@ -3,13 +3,14 @@
 import { FiltersContext } from '@/app/page';
 import { Input } from '@/sharedComponents/Input/Input';
 import { Select } from '@/sharedComponents/Select/Select';
+import { SelectServer } from '@/sharedComponents/SelectWithServerList/SelectServer';
 import { GenresType } from '@/utils/data';
 import { useContext } from 'react';
 import styles from './styles.module.css';
 
 interface FiltersUIProps {
     filters: {
-        genres: GenresType
+        genres: GenresType;
     },
 }
 
@@ -25,6 +26,10 @@ function FiltersUI({filters}: FiltersUIProps) {
             <div className={styles.form__group}>
                 <label className={styles.form__label}>Жанр</label>
                 <Select type="genre" list={filters.genres} placeholder="Выберите жанр" />
+            </div>
+            <div className={styles.form__group}>
+                <label className={styles.form__label}>Кинотеатр</label>
+                <SelectServer type="cinema" placeholder="Выберите кинотеатр" />
             </div>
             {/* <div className={styles.form__group}>
                 <label htmlFor="form_genre" className={styles.form__label}>Кинотеатр</label>

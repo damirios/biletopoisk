@@ -8,11 +8,11 @@ export const Reviews = ({movieId}: {movieId: string}) => {
     const {data, isLoading, error} = useGetMovieReviewsQuery(movieId);
     
     if (isLoading) {
-        return <div>...Loading!!!</div>
+        return <div className="loading_small">...Загружаем отзывы</div>
     }    
 
     if (!data || error) {
-        return <div>Not Found!</div>
+        return <div className="error">Не найдено</div>
     }
 
     return (

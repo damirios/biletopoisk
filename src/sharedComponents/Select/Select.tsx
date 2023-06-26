@@ -1,4 +1,6 @@
+import { useParamsObj } from "@/hooks/useParamsObj";
 import { FiltersParamsTypes } from "@/types/FiltersTypes";
+import { getQueryString } from "@/utils/getQueryString";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Portal } from "../Portal/Portal";
@@ -16,20 +18,21 @@ export function Select({placeholder, list, type}: SelectPropsType) {
     const rootRef = useRef<HTMLDivElement>(null);
 
     const router = useRouter();
-    const params = useSearchParams();
-    const value = params.get(type);
+    const params = useParamsObj();
+    const value = params[type];
 
     function openMenu(e: React.MouseEvent<HTMLDivElement>) {
         setIsOpen(true);
     }
 
     function handleSelectionChange(e: React.MouseEvent<HTMLLIElement>) {
-        const value = (e.target as HTMLLIElement).dataset.value;
-        if (value !== undefined) {
-            if (value === 'none') {
-                router.push("/");
+        const curValue = (e.target as HTMLLIElement).dataset.value;
+
+        if (curValue !== undefined) {
+            if (curValue === 'none') {
+                router.push(getQueryString({ ...params, [type]: null}));
             } else {
-                router.push(`/?${type}=${value}`);
+                router.push(getQueryString({...params, [type]: curValue}));
             }
         }
     }
