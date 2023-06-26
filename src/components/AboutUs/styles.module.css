@@ -1,0 +1,14 @@
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 16px;
+}
+
+.paragraph {
+    font-size: 16px;
+    line-height: 150%;
+}
+.paragraph:not(:last-child) {
+    margin-bottom: 16px;
+}
