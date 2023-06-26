@@ -1,3 +1,5 @@
+import { GenresValues } from "@/utils/data";
+
 export type FiltersParamsTypes = {
     genre: string | null;
     title: string | null;

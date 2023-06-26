@@ -2,10 +2,10 @@ import { ReactNode } from "react";
 import { Container } from "./Container/Container";
 
 
-export function Content({children}: {children: ReactNode}) {
+export function Content({children, className}: {children: ReactNode, className?: string}) {
     return <div className="content">
         <Container>
-            <div className="content__row">
+            <div className={`content__row ${className || ''}`}>
                 {children}
             </div>
         </Container>

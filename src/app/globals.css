@@ -80,10 +80,14 @@ footer {
 }
 
 .content__row {
+	padding: 24px 0;
+	height: 100%;
+}
+
+/* для главной */
+.content__main { 
 	display: flex;
 	column-gap: 24px;
-	padding: 24px 0;
-	min-height: 100%;
 }
 
 .content__filters {

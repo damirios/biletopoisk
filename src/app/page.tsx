@@ -51,7 +51,7 @@ export default function Home() {
 	}
 	const allGenres = getAllGenresFromMovies(moviesResponse.data);
 
-	return <Content>
+	return <Content className="content__main">
 		<FiltersContext.Provider value={{genres: {none: "Не выбран", ...allGenres}}}>
 			<Filters />
 			<MovieList movies={moviesToShow} isLoading={moviesResponse.isLoading} error={moviesResponse.error} />
