@@ -1,11 +1,11 @@
 "use client";
 
-import { FiltersContext } from '@/app/page';
 import { Input } from '@/sharedComponents/Input/Input';
 import { Select } from '@/sharedComponents/Select/Select';
 import { SelectServer } from '@/sharedComponents/SelectWithServerList/SelectServer';
 import { GenresType } from '@/utils/data';
 import { useContext } from 'react';
+import { FiltersContext } from '../Main/PageWithContext';
 import styles from './styles.module.css';
 
 interface FiltersUIProps {

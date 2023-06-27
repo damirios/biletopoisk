@@ -5,13 +5,10 @@ import { MovieList } from '@/components/MovieList/MovieList'
 import { Filters } from '@/components/Filters/Filters'
 import { useGetAllMoviesQuery } from '@/store/services/movieApi';
 import { getAllGenresFromMovies } from '../utils/getAllGenresFromMovies';
-import { createContext } from 'react';
-import { GenresType } from '@/utils/data';
 import { useParamsObj } from '@/hooks/useParamsObj';
 import { MovieType } from '@/types/MovieTypes';
 import { FiltersParamsTypes } from '@/types/FiltersTypes';
-
-export const FiltersContext = createContext<{genres: GenresType}>({genres: {}});
+import { PageWithContext } from '@/components/Main/PageWithContext';
 
 function getFilteredMovies(allMovies: MovieType[] | undefined, params: FiltersParamsTypes): MovieType[] | null {
 	if (allMovies) {
@@ -52,9 +49,9 @@ export default function Home() {
 	const allGenres = getAllGenresFromMovies(moviesResponse.data);
 
 	return <Content className="content__main">
-		<FiltersContext.Provider value={{genres: {none: "Не выбран", ...allGenres}}}>
+		<PageWithContext contextValue={{genres: {none: "Не выбран", ...allGenres}}}>
 			<Filters />
 			<MovieList movies={moviesToShow} isLoading={moviesResponse.isLoading} error={moviesResponse.error} />
-		</FiltersContext.Provider>
+		</PageWithContext>
 	</Content>
 }
